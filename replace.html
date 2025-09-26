@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+    height: 244px;
+    width: 43%;
+    display: flex;
+    background-color: yellow;
+    margin: auto;
+        }
+    #inp_str{
+        height: 209px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table >
+        <tr>
+            <td rowspan="4" colspan="4">
+                <label for="inp_str">Enter the input string</label><br>
+                <input type="text" name="inp_str" id="inp_str">
+            </td>
+            <td rowspan="2" colspan="2">
+                <label for="inp_to_replace">Enter text to replace</label><br>
+                <input type="text" name="inp_to_replace" id="inp_to_replace">
+            </td>
+            <td></td>
+        
+            <td rowspan="2" colspan="2">
+                <label for="inp_to_replace_with">Enter text to replace with</label><br>
+                <input type="text" name="inp_to_replace_with" id="inp_to_replace_with">
+            </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td><button id="replace_one" type="button" onclick="replace_one()">Replace One</button></td>
+            <td></td>
+            <td></td>
+            <td><button id="repace_all" type="button" onclick="repace_all()">Replace All</button></td>
+        </tr>
+        
+    </table>
+    <script>
+        let input_string = document.getElementById("inp_str").value;
+        let input_to_replace = document.getElementById("inp_to_replace").value;
+        let inp_to_replace_with = document.getElementById("inp_to_replace_with").value;
+        function replace_one(){
+        let input_string = document.getElementById("inp_str").value;
+        let input_to_replace = document.getElementById("inp_to_replace").value;
+        let inp_to_replace_with = document.getElementById("inp_to_replace_with").value;
+            let result = input_string.replace(input_to_replace,inp_to_replace_with);
+            document.getElementById("inp_str").value = result;
+        }
+        function repace_all(){
+        let input_string = document.getElementById("inp_str").value;
+        let input_to_replace = document.getElementById("inp_to_replace").value;
+        let inp_to_replace_with = document.getElementById("inp_to_replace_with").value;
+            let result = input_string.replaceAll(input_to_replace,inp_to_replace_with);
+            document.getElementById("inp_str").value = result;
+        }
+       
+    </script>
+</body>
+</html>
